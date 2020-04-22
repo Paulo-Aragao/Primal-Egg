@@ -7,6 +7,7 @@ const GROUP_FISHS = "Fruits"
 const GROUP_ALIENS = "Aliens"
 const GROUP_WARRIORS = "Warriors"
 const GROUP_ARROWS = "Arrows"
+#variables of alien Control
 
 var time_interval_alein_spawn_max
 var time_interval_alein_spawn_min

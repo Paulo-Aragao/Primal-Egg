@@ -22,13 +22,12 @@ config/icon="res://icon.png"
 [autoload]
 
 MainScp="*res://Scenes/MainSCP.gd"
-Native="res://Scenes/Native.tscn"
-GlobalTileMap="res://Scenes/TileMap.tscn"
 MouseCursor="*res://Scenes/MouseCursor.tscn"
 
 [display]
 
 window/size/width=800
+window/size/height=480
 
 [rendering]
 
