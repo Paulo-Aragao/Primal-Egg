@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="PrimalEggsStory"
+run/main_scene="res://Scenes/Main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+MainScp="*res://Scenes/MainSCP.gd"
+Native="res://Scenes/Native.tscn"
+GlobalTileMap="res://Scenes/TileMap.tscn"
+MouseCursor="*res://Scenes/MouseCursor.tscn"
+
+[display]
+
+window/size/width=800
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

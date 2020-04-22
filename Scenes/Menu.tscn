@@ -1,0 +1,14 @@
+[gd_scene format=2]
+
+[node name="Menu" type="Node2D"]
+
+[node name="Start" type="Button" parent="."]
+margin_left = 107.0
+margin_top = 21.0
+margin_right = 263.0
+margin_bottom = 62.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Start"]

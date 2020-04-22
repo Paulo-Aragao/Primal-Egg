@@ -1,0 +1,89 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Sprites/native2_idle.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/native2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/selection.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Enemy.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 19.9005, 36.0261 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[node name="Native" type="Node2D"]
+position = Vector2( 447.951, 279.395 )
+script = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -19.0
+margin_top = -32.0
+margin_right = 20.0
+margin_bottom = 37.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="SptSelection" type="Sprite" parent="StaticBody2D"]
+visible = false
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 1.78748, 29.9897 )
+scale = Vector2( 4.3515, 4.3515 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0.557404, 2.03677 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="StaticBody2D"]
+position = Vector2( 2.61254, 2.30517 )
+scale = Vector2( 4.93801, 4.93801 )
+frames = SubResource( 10 )
+animation = "Idle"
+frame = 2
+[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]

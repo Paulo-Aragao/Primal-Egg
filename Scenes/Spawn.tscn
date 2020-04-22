@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Spawn.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Alien.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/alien1.png" type="Texture" id=3]
+
+[node name="Spawn" type="Position2D"]
+script = ExtResource( 1 )
+spawn_scene = ExtResource( 2 )
+timer_path = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 4.96, 4.96 )
+texture = ExtResource( 3 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
