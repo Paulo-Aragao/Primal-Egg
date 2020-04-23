@@ -3,7 +3,7 @@ extends Area2D
 #vars
 var selected = false
 var current_position = get_position()
-var final_position = get_position()
+var final_position = Vector2()
 
 
 const SMOOTH_SPEED = 4
@@ -31,7 +31,8 @@ func _process(delta):
 					time = 0
 					shoot(get_global_mouse_position())
 			else:
-				final_position = get_global_mouse_position()
+				final_position.y = get_global_mouse_position().y-40
+				final_position.x = get_global_mouse_position().x
 	if(get_position() != final_position):
 		var mpos = final_position
 		var destination = get_position()
@@ -53,7 +54,7 @@ func shoot(target_position):
 func _on_Button_button_down():
 	#deve ser chamada em todas as unidades do jogo
 	get_tree().call_group_flags(2, MainScp.GROUP_WARRIORS, "deselected")
-	get_tree().call_group_flags(2, "Natives", "deselected")
+	get_tree().call_group_flags(2, MainScp.GROUP_ERICA, "deselected")
 	MainScp.unity_selected = "Warrior"
 	selected = true
 	$RigidBody2D/SptSelection.visible = true

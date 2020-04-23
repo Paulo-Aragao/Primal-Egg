@@ -6,6 +6,7 @@ var col_size
 var col_size_2 
 var transform_
 func _ready():
+	add_to_group(MainScp.GROUP_WARRIORS)
 	transform_ = $CollisionShape2D.get_shape()
 	col_size = transform_.get_radius()
 	col_size_2 = 0.0
